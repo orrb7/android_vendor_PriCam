@@ -1,0 +1,342 @@
+android_app_import {
+    name: "PriCamera",
+    owner: "advan",
+    apk: "proprietary/product/priv-app/PriCamera/PriCamera.apk",
+    privileged: true,
+    certificate: "platform",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libBSTFaceDetction",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libBSTFaceDetction.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libBSTSingleAIDoc",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libBSTSingleAIDoc.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libBstStick2D",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libBstStick2D.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjniBstAiDoc",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjniBstAiDoc.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjniBstSticker",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjniBstSticker.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_bstbeauty",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjni_bstbeauty.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_bstfilter",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjni_bstfilter.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_bstportrait",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjni_bstportrait.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_uvpanorama",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjni_uvpanorama.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libopencv_java4",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libopencv_java4.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libBSTBeautyAPK",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libBSTBeautyAPK.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libBSTSingleAIBokeh",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libBSTSingleAIBokeh.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libUvPanorama",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libUvPanorama.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libJpegOal",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libJpegOal.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjpeg-alpha-oal",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjpeg-alpha-oal.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_pq",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjni_pq.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libneuron_graph_delegate.mtk",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libneuron_graph_delegate.mtk.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libneuronusdk_adapter.mtk",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libneuronusdk_adapter.mtk.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtflite_mtk",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libtflite_mtk.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtflite_mtk.mtk",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libtflite_mtk.mtk.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtensorflowlite",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libtensorflowlite.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtensorflowlite24",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libtensorflowlite24.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
