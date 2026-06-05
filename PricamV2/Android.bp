@@ -1,0 +1,162 @@
+android_app_import {
+    name: "PriCamera",
+    owner: "advan",
+    apk: "proprietary/product/priv-app/PriCamera/PriCamera.apk",
+    privileged: true,
+    certificate: "platform",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libBSTFaceDetction",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libBSTFaceDetction.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libBSTSingleAIDoc",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libBSTSingleAIDoc.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libBstStick2D",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libBstStick2D.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjniBstAiDoc",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjniBstAiDoc.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjniBstSticker",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjniBstSticker.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_bstbeauty",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjni_bstbeauty.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_bstfilter",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjni_bstfilter.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_bstportrait",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjni_bstportrait.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_uvpanorama",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libjni_uvpanorama.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libopencv_java4",
+    owner: "advan",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/product/lib64/libopencv_java4.so"],
+        },
+    },
+    shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
+    compile_multilib: "64",
+    product_specific: true,
+    prefer: true,
+}
