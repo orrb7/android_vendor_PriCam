@@ -7,8 +7,8 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_COPY_FILES += \
     $(PriCamera_PATH)/proprietary/product/etc/bst_stick.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/bst_stick.cfg \
     $(PriCamera_PATH)/proprietary/product/etc/singleaidoc.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/singleaidoc.cfg \
-    $(call find-copy-subdir-files,*,$(PriCamera_PATH)/proprietary/product/etc/bstai_aidoc,product/etc/bstai_aidoc) \
-    $(call find-copy-subdir-files,*,$(PriCamera_PATH)/proprietary/product/etc/bstaicorner_aidoc,product/etc/bstaicorner_aidoc)
+    $(PriCamera_PATH)/proprietary/product/etc/bstai_aidoc:$(TARGET_COPY_OUT_PRODUCT)/etc/bstai_aidoc \
+    $(PriCamera_PATH)/proprietary/product/etc/bstaicorner_aidoc:$(TARGET_COPY_OUT_PRODUCT)/etc/bstaicorner_aidoc
 
 PRODUCT_PACKAGES += \
     PriCamera \
@@ -28,11 +28,12 @@ PRODUCT_PACKAGES += \
     libJpegOal \
     libjpeg-alpha-oal \
     libjni_pq \
-    libneuron_graph_delegate.mtk \
-    libneuronusdk_adapter.mtk \
     libtflite_mtk \
     libtensorflowlite \
-    libtensorflowlite24
+    libtensorflowlite24 \
+    libMiraVision_jni \
+    libPQDCjni \
+    libPQjni
 
 PRODUCT_COPY_FILES += \
     vendor/PriCamera/proprietary/product/media/sticker/expressionsticker_01_cat/cat/cat.txt:product/media/sticker/expressionsticker_01_cat/cat/cat.txt \
@@ -1641,31 +1642,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.odm.camera.minbrightness=5 \
     persist.sys.camera.videomirror=1 \
     ro.camera.sound.forced=0
-
-PRODUCT_COPY_FILES += \
-    $(PriCamera_PATH)/proprietary/product/lib64/libBSTFaceDetction.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libBSTFaceDetction.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libBSTSingleAIDoc.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libBSTSingleAIDoc.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libBSTSingleAIBokeh.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libBSTSingleAIBokeh.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libBstStick2D.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libBstStick2D.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libc++_shared.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libc++_shared.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libjniBstAiDoc.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libjniBstAiDoc.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libjniBstSticker.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libjniBstSticker.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libjni_bstbeauty.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libjni_bstbeauty.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libjni_bstfilter.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libjni_bstfilter.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libjni_bstportrait.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libjni_bstportrait.so \
-    $(PeiCamera_PATH)/proprietary/product/lib64/libjni_uvpanorama.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libjni_uvpanorama.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libopencv_java4.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libopencv_java4.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libloadfilter.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libloadfilter.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libjpeg-alpha.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libjpeg-alpha.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libcompress.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libcompress.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libtflite_mtk.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libtflite_mtk.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libtensorflowlite.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libtensorflowlite.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libjni_pq.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libjni_pq.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libPQDCjni.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libPQDCjni.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libPQjni.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libPQjni.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libMiraVision_jni.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libMiraVision_jni.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libneuronusdk_adapter.mtk.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libneuronusdk_adapter.mtk.so \
-    $(PriCamera_PATH)/proprietary/product/lib64/libneuron_graph_delegate.mtk.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/PriCamera/lib/arm64/libneuron_graph_delegate.mtk.so
 
 PRODUCT_COPY_FILES += \
     vendor/PriCamera/proprietary/product/etc/permissions/privapp-permissions-PriCamera.xml:product/etc/permissions/privapp-permissions-PriCamera.xml
