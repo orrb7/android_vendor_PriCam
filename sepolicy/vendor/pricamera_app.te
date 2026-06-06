@@ -1,0 +1,100 @@
+# domain
+type pricamera_app, domain;
+type pricamera_app_exec, exec_type, file_type;
+
+# platform_app
+typeattribute pricamera_app platform_app_type;
+
+# ── Access camera device
+# Akses /dev/video* (camera HAL nodes)
+allow pricamera_app video_device:chr_file { read write open ioctl };
+allow pricamera_app camera_device:chr_file { read write open ioctl };
+
+# Camera HAL service
+allow pricamera_app hal_camera:binder { call transfer };
+allow pricamera_app hal_camera_service:service_manager find;
+
+# MTK camera HAL
+allow pricamera_app hal_camera_default:binder { call transfer };
+allow pricamera_app mtk_hal_camera:binder { call transfer };
+
+# Media
+allow pricamera_app mediaserver:binder { call transfer };
+allow pricamera_app mediametrics_service:service_manager find;
+allow pricamera_app mediadrmserver:binder { call transfer };
+
+# Audio
+allow pricamera_app hal_audio:binder { call transfer };
+allow pricamera_app audio_service:service_manager find;
+
+allow pricamera_app media_rw_data_file:dir { read write open add_name remove_name search };
+allow pricamera_app media_rw_data_file:file { read write open create unlink getattr setattr };
+
+# Acces/sdcard via FUSE
+allow pricamera_app fuse:dir { read write open add_name remove_name search getattr };
+allow pricamera_app fuse:file { read write open create unlink getattr setattr };
+
+# Sensor
+# Accelerometer, gyroscope
+allow pricamera_app hal_sensors:binder { call transfer };
+allow pricamera_app sensor_service:service_manager find;
+
+# Location
+allow pricamera_app location_service:service_manager find;
+
+# System services
+allow pricamera_app activity_service:service_manager find;
+allow pricamera_app window_service:service_manager find;
+allow pricamera_app surfaceflinger:binder { call transfer };
+allow pricamera_app display_service:service_manager find;
+
+# PowerManager
+allow pricamera_app power_service:service_manager find;
+
+# Vibrator
+allow pricamera_app hal_vibrator:binder { call transfer };
+allow pricamera_app vibrator_service:service_manager find;
+
+# Flashlight
+allow pricamera_app hal_light:binder { call transfer };
+
+# MTK specific
+# MTK Power HAL (perf boost saat capture)
+allow pricamera_app mtk_hal_power:binder { call transfer };
+allow pricamera_app hal_power:binder { call transfer };
+
+# MTK PQ (Picture Quality)
+allow pricamera_app mtk_hal_pq:binder { call transfer };
+
+# MTK MM hardware
+allow pricamera_app mtk_mmhw_service:service_manager find;
+
+# BST AI libs
+allow pricamera_app system_ext_file:dir { read open search };
+allow pricamera_app system_ext_file:file { read open getattr execute };
+
+allow pricamera_app product_file:dir { read open search };
+allow pricamera_app product_file:file { read open getattr execute };
+
+# Temp files
+allow pricamera_app app_data_file:dir { read write open add_name remove_name search create };
+allow pricamera_app app_data_file:file { read write open create unlink getattr setattr };
+
+# Cache for BST AI processing
+allow pricamera_app { cache_file tmpfs }:dir { read write open add_name search };
+allow pricamera_app { cache_file tmpfs }:file { read write open create unlink };
+
+# Network
+allow pricamera_app node:tcp_socket { node_bind };
+allow pricamera_app port:tcp_socket { name_connect };
+allow pricamera_app network_manager_service:service_manager find;
+
+# OpenCL
+allow pricamera_app vendor_file:dir { read open search };
+allow pricamera_app vendor_file:file { read open execute getattr };
+
+# GPU OpenCL
+allow pricamera_app gpu_device:chr_file { read write open ioctl };
+
+# Proc/sys access
+allow pricamera_app proc_meminfo:file { read open };

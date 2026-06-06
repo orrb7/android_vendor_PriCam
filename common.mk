@@ -4,6 +4,12 @@ PriCamera_PATH := vendor/PriCamera
 PRODUCT_SOONG_NAMESPACES += \
    $(PriCamera_PATH)
 
+PRODUCT_COPY_FILES += \
+    $(PriCamera_PATH)/proprietary/product/etc/bst_stick.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/bst_stick.cfg \
+    $(PriCamera_PATH)/proprietary/product/etc/singleaidoc.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/singleaidoc.cfg \
+    $(call find-copy-subdir-files,*,$(PriCamera_PATH)/proprietary/product/etc/bstai_aidoc,product/etc/bstai_aidoc) \
+    $(call find-copy-subdir-files,*,$(PriCamera_PATH)/proprietary/product/etc/bstaicorner_aidoc,product/etc/bstaicorner_aidoc)
+
 PRODUCT_PACKAGES += \
     PriCamera \
     libBSTFaceDetction \

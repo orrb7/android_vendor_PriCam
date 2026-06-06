@@ -1,0 +1,14 @@
+# PriCamera file contexts
+#
+/product/priv-app/PriCamera(/.*)?    u:object_r:privapp_data_file:s0
+
+# BST libs
+/product/lib64/libBST.*\.so          u:object_r:system_lib_file:s0
+/product/lib64/libjni_bst.*\.so      u:object_r:system_lib_file:s0
+/product/lib64/libjniBst.*\.so       u:object_r:system_lib_file:s0
+/product/lib64/libopencv_java4\.so   u:object_r:system_lib_file:s0
+/product/lib64/libtensorflowlite.*   u:object_r:system_lib_file:s0
+/product/lib64/libtflite_mtk.*       u:object_r:system_lib_file:s0
+/product/lib64/libUvPanorama\.so     u:object_r:system_lib_file:s0
+/product/lib64/libloadfilter\.so     u:object_r:system_lib_file:s0
+
