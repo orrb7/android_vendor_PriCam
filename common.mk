@@ -1611,7 +1611,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.odm.beauty.opengl=1 \
     ro.odm.brand.watermark=1 \
     ro.odm.brandwatermark.default.value=1 \
-    ro.odm.watermark.model=ADVAN\;X1 \
+    ro.odm.watermark.model=ADVAN;X1 \
     ro.odm.coloredwatermark=1 \
     ro.odm.autohdr=1 \
     ro.odm.nightnoeis=1 \
@@ -1637,4 +1637,20 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.camera.sound.forced=0
 
 PRODUCT_COPY_FILES += \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libBSTFaceDetction.so:product/priv-app/PriCamera/lib/arm64/libBSTFaceDetction.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libBSTSingleAIDoc.so:product/priv-app/PriCamera/lib/arm64/libBSTSingleAIDoc.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libBstStick2D.so:product/priv-app/PriCamera/lib/arm64/libBstStick2D.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libjniBstAiDoc.so:product/priv-app/PriCamera/lib/arm64/libjniBstAiDoc.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libjniBstSticker.so:product/priv-app/PriCamera/lib/arm64/libjniBstSticker.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libjni_bstbeauty.so:product/priv-app/PriCamera/lib/arm64/libjni_bstbeauty.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libjni_bstfilter.so:product/priv-app/PriCamera/lib/arm64/libjni_bstfilter.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libjni_bstportrait.so:product/priv-app/PriCamera/lib/arm64/libjni_bstportrait.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libjni_uvpanorama.so:product/priv-app/PriCamera/lib/arm64/libjni_uvpanorama.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libopencv_java4.so:product/priv-app/PriCamera/lib/arm64/libopencv_java4.so \
+    vendor/PriCamera/proprietary/product/priv-app/PriCamera/lib/arm64/libc++_shared.so:product/priv-app/PriCamera/lib/arm64/libc++_shared.so
+
+PRODUCT_COPY_FILES += \
     vendor/PriCamera/proprietary/product/etc/permissions/privapp-permissions-PriCamera.xml:product/etc/permissions/privapp-permissions-PriCamera.xml
+
+PRODUCT_COPY_FILES += \
+    vendor/PriCamera/proprietary/product/etc/permissions/hiddenapi-package-allowlist-PriCamera.xml:product/etc/permissions/hiddenapi-package-allowlist-PriCamera.xml

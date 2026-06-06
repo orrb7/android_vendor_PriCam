@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Privapp permissions for com.mediatek.camera (PriCamera)
+    Extracted from Advan X1 stock ROM AndroidManifest.xml
+-->
 <permissions>
     <privapp-permissions package="com.mediatek.camera">
-        <permission name="android.permission.CAMERA"/>
-        <permission name="android.permission.RECORD_AUDIO"/>
-        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
-        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-        <permission name="android.permission.ACCESS_FINE_LOCATION"/>
-        <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
-        <permission name="android.permission.MANAGE_MEDIA"/>
-        <permission name="android.permission.MODIFY_AUDIO_SETTINGS"/>
-        <permission name="android.permission.VIBRATE"/>
+        <!-- Camera & media -->
+        <permission name="android.permission.CAMERA" />
+        <permission name="android.permission.SYSTEM_CAMERA" />
+        <permission name="android.permission.RECORD_AUDIO" />
+        <permission name="android.permission.WRITE_MEDIA_STORAGE" />
+        <permission name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+        <!-- Location -->
+        <permission name="android.permission.ACCESS_FINE_LOCATION" />
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" />
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+        <!-- Network -->
+        <permission name="android.permission.INTERNET" />
+        <permission name="android.permission.ACCESS_NETWORK_STATE" />
+        <permission name="android.permission.ACCESS_WIFI_STATE" />
+        <permission name="android.permission.CHANGE_WIFI_STATE" />
+
+        <!-- System -->
+        <permission name="android.permission.VIBRATE" />
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED" />
+        <permission name="android.permission.INTERNAL_SYSTEM_WINDOW" />
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.SET_ANIMATION_SCALE" />
+        <permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
+
+        <!-- MTK specific -->
+        <permission name="android.permission.ACCESS_MTK_MMHW" />
+        <permission name="mediatek.permission.ACCESS_MTK_MMHW" />
+
+        <!-- Visual search -->
+        <permission name="com.visualsearch.permission.imagedata" />
     </privapp-permissions>
 </permissions>
