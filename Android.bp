@@ -8,18 +8,6 @@ android_app_import {
     dex_preopt: {
         enabled: false,
     },
-    jni_libs: [
-        "libBSTFaceDetction",
-        "libBSTSingleAIDoc",
-        "libBstStick2D",
-        "libjniBstAiDoc",
-        "libjniBstSticker",
-        "libjni_bstbeauty",
-        "libjni_bstfilter",
-        "libjni_bstportrait",
-        "libjni_uvpanorama",
-        "libopencv_java4",
-    ],
     product_specific: true,
 }
 
