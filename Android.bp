@@ -1,14 +1,38 @@
 android_app_import {
     name: "PriCamera",
     owner: "advan",
-    apk: "proprietary/product/priv-app/PriCamera/PriCamera.apk",
+    apk: "proprietary/system_ext/priv-app/PriCamera/PriCamera.apk",
     privileged: true,
     preprocessed: true,
     presigned: true,
     dex_preopt: {
         enabled: false,
     },
-    product_specific: true,
+    system_ext_specific: true,
+    symlinks: [
+        "lib/arm64/libBSTFaceDetction.so",
+        "lib/arm64/libBSTSingleAIDoc.so",
+        "lib/arm64/libBstStick2D.so",
+        "lib/arm64/libjniBstAiDoc.so",
+        "lib/arm64/libjniBstSticker.so",
+        "lib/arm64/libjni_bstbeauty.so",
+        "lib/arm64/libjni_bstfilter.so",
+        "lib/arm64/libjni_bstportrait.so",
+        "lib/arm64/libjni_uvpanorama.so",
+        "lib/arm64/libopencv_java4.so",
+    ],
+    required: [
+        "libBSTFaceDetction",
+        "libBSTSingleAIDoc",
+        "libBstStick2D",
+        "libjniBstAiDoc",
+        "libjniBstSticker",
+        "libjni_bstbeauty",
+        "libjni_bstfilter",
+        "libjni_bstportrait",
+        "libjni_uvpanorama",
+        "libopencv_java4",
+    ],
 }
 
 cc_prebuilt_library_shared {
@@ -17,13 +41,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libBSTFaceDetction.so"],
+            srcs: ["proprietary/system_ext/lib64/libBSTFaceDetction.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -33,13 +57,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libBSTSingleAIDoc.so"],
+            srcs: ["proprietary/system_ext/lib64/libBSTSingleAIDoc.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -49,13 +73,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libBstStick2D.so"],
+            srcs: ["proprietary/system_ext/lib64/libBstStick2D.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -65,13 +89,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libjniBstAiDoc.so"],
+            srcs: ["proprietary/system_ext/lib64/libjniBstAiDoc.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -81,13 +105,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libjniBstSticker.so"],
+            srcs: ["proprietary/system_ext/lib64/libjniBstSticker.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -97,13 +121,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libjni_bstbeauty.so"],
+            srcs: ["proprietary/system_ext/lib64/libjni_bstbeauty.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -113,13 +137,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libjni_bstfilter.so"],
+            srcs: ["proprietary/system_ext/lib64/libjni_bstfilter.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -129,13 +153,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libjni_bstportrait.so"],
+            srcs: ["proprietary/system_ext/lib64/libjni_bstportrait.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -145,13 +169,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libjni_uvpanorama.so"],
+            srcs: ["proprietary/system_ext/lib64/libjni_uvpanorama.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -161,13 +185,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libopencv_java4.so"],
+            srcs: ["proprietary/system_ext/lib64/libopencv_java4.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -177,13 +201,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libBSTBeautyAPK.so"],
+            srcs: ["proprietary/system_ext/lib64/libBSTBeautyAPK.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -193,13 +217,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libUvPanorama.so"],
+            srcs: ["proprietary/system_ext/lib64/libUvPanorama.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -209,13 +233,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libJpegOal.so"],
+            srcs: ["proprietary/system_ext/lib64/libJpegOal.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -225,13 +249,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libjpeg-alpha-oal.so"],
+            srcs: ["proprietary/system_ext/lib64/libjpeg-alpha-oal.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -241,13 +265,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libjni_pq.so"],
+            srcs: ["proprietary/system_ext/lib64/libjni_pq.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -257,13 +281,13 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libtflite_mtk.so"],
+            srcs: ["proprietary/system_ext/lib64/libtflite_mtk.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }
 
@@ -273,12 +297,12 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            srcs: ["proprietary/product/lib64/libtensorflowlite24.so"],
+            srcs: ["proprietary/system_ext/lib64/libtensorflowlite24.so"],
         },
     },
     shared_libs: ["liblog", "libc", "libm", "libdl", "libc++"],
     compile_multilib: "64",
     check_elf_files: false,
-    product_specific: true,
+    system_ext_specific: true,
     prefer: true,
 }

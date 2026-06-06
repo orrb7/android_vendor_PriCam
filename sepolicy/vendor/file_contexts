@@ -1,14 +1,22 @@
-# PriCamera file contexts
+# PriCamera file contexts (System_ext Transition)
 #
-/product/priv-app/PriCamera(/.*)?    u:object_r:privapp_data_file:s0
+/system_ext/priv-app/PriCamera(/.*)?                u:object_r:system_file:s0
 
-# BST libs
-/product/lib64/libBST.*\.so          u:object_r:system_lib_file:s0
-/product/lib64/libjni_bst.*\.so      u:object_r:system_lib_file:s0
-/product/lib64/libjniBst.*\.so       u:object_r:system_lib_file:s0
-/product/lib64/libopencv_java4\.so   u:object_r:system_lib_file:s0
-/product/lib64/libtensorflowlite.*   u:object_r:system_lib_file:s0
-/product/lib64/libtflite_mtk.*       u:object_r:system_lib_file:s0
-/product/lib64/libUvPanorama\.so     u:object_r:system_lib_file:s0
-/product/lib64/libloadfilter\.so     u:object_r:system_lib_file:s0
+# BST and Camera Support Libraries (.so)
+/system_ext/lib64/libBST.*\.so                u:object_r:system_file:s0
+/system_ext/lib64/libjni_bst.*\.so            u:object_r:system_file:s0
+/system_ext/lib64/libjniBst.*\.so             u:object_r:system_file:s0
+/system_ext/lib64/libopencv_java4\.so         u:object_r:system_file:s0
+/system_ext/lib64/libtensorflowlite.*\.so     u:object_r:system_file:s0
+/system_ext/lib64/libtflite_mtk.*\.so         u:object_r:system_file:s0
+/system_ext/lib64/libUvPanorama\.so           u:object_r:system_file:s0
+/system_ext/lib64/libloadfilter\.so           u:object_r:system_file:s0
 
+/system_ext/lib64/libBSTBeautyAPK\.so         u:object_r:system_file:s0
+/system_ext/lib64/libBSTSingleAIBokeh\.so     u:object_r:system_file:s0
+/system_ext/lib64/libJpegOal\.so              u:object_r:system_file:s0
+/system_ext/lib64/libjpeg-alpha-oal\.so       u:object_r:system_file:s0
+/system_ext/lib64/libjni_pq\.so               u:object_r:system_file:s0
+/system_ext/lib64/libMiraVision_jni\.so       u:object_r:system_file:s0
+/system_ext/lib64/libPQDCjni\.so              u:object_r:system_file:s0
+/system_ext/lib64/libPQjni\.so                u:object_r:system_file:s0
