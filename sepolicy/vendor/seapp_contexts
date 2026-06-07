@@ -1,3 +1,1 @@
-user=_app seinfo=platform name=com.mediatek.camera domain=pricamera_app type=app_data_file levelFrom=all
-user=_app name=com.mediatek.camera domain=pricamera_app type=app_data_file levelFrom=all
-
+user=_app seinfo=platform name=com.mediatek.camera domain=priv_app type=privapp_data_file levelFrom=all

@@ -1,5 +1,8 @@
 # MTK camera HAL access to default properties
 allow mtk_hal_camera default_prop:file { read open getattr map };
 
-# Allow mtk_hal_camera set vendor debug camera properties
+# Allow read vendor default prop (untuk HAL initialization)
+allow mtk_hal_camera vendor_default_prop:file { read open getattr map };
+
+# Allow set vendor debug camera properties
 set_prop(mtk_hal_camera, vendor_debug_camera_prop)

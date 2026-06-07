@@ -1,97 +1,18 @@
-type pricamera_app, domain, coredomain;
-
-# Domain
-app_domain(pricamera_app)
-
-# Atribut
-typeattribute pricamera_app privapp_domain;
-
-# Camera Hardware Access
-# Akses /dev/video* dan /dev/camera* (HAL nodes)
-allow pricamera_app video_device:chr_file { read write open ioctl };
-allow pricamera_app camera_device:chr_file { read write open ioctl };
-
-allow pricamera_app hal_camera:binder { call transfer };
-allow pricamera_app hal_camera_service:service_manager find;
-allow pricamera_app hal_camera_default:binder { call transfer };
-allow pricamera_app mtk_hal_camera:binder { call transfer };
-
-# Media & Audio Services
-allow pricamera_app mediaserver:binder { call transfer };
-allow pricamera_app mediametrics_service:service_manager find;
-allow pricamera_app mediadrmserver:binder { call transfer };
-allow pricamera_app hal_audio:binder { call transfer };
-allow pricamera_app audio_service:service_manager find;
-allow pricamera_app audioserver:binder { call transfer };
-
-# Storage Access (Privileged Shared Storage)
-allow pricamera_app media_rw_data_file:dir { read write open add_name remove_name search };
-allow pricamera_app media_rw_data_file:file { read write open create unlink getattr setattr };
-allow pricamera_app fuse:dir { read write open add_name remove_name search getattr };
-allow pricamera_app fuse:file { read write open create unlink getattr setattr };
-
-# Sensors & Location
-allow pricamera_app hal_sensors:binder { call transfer };
-allow pricamera_app sensor_service:service_manager find;
-allow pricamera_app location_service:service_manager find;
-
-# Core Android UI System Services
-allow pricamera_app activity_service:service_manager find;
-allow pricamera_app window_service:service_manager find;
-allow pricamera_app surfaceflinger:binder { call transfer };
-allow pricamera_app display_service:service_manager find;
-allow pricamera_app power_service:service_manager find;
-allow pricamera_app accessibility_service:service_manager find;
-
-# Vibrator & Flashlight (Light HAL)
-allow pricamera_app hal_vibrator:binder { call transfer };
-allow pricamera_app vibrator_service:service_manager find;
-allow pricamera_app hal_light:binder { call transfer };
-
-# MediaTek Platform Specific Optimizations
-allow pricamera_app mtk_hal_power:binder { call transfer };
-allow pricamera_app hal_power:binder { call transfer };
-allow pricamera_app mtk_hal_pq:binder { call transfer };
-allow pricamera_app mtk_mmhw_service:service_manager find;
-
-# BST AI Libs & System Ext Files Integration
-allow pricamera_app system_ext_file:dir { read open search };
-allow pricamera_app system_ext_file:file { read open getattr execute };
-
-# Local App Storage Handling (Dukungan untuk Privileged Data)
-allow pricamera_app app_data_file:dir { read write open add_name remove_name search create };
-allow pricamera_app app_data_file:file { read write open create unlink getattr setattr };
-allow pricamera_app privapp_data_file:dir { read write open add_name remove_name search create };
-allow pricamera_app privapp_data_file:file { read write open create unlink getattr setattr };
-
-# Cache Files & Temp Files Execution for AI Algorithms
-allow pricamera_app { cache_file tmpfs }:dir { read write open add_name search };
-allow pricamera_app { cache_file tmpfs }:file { read write open create unlink };
-
-# GPU HW Rendering & OpenCL Libraries Access
-allow pricamera_app vendor_file:dir { read open search };
-allow pricamera_app vendor_file:file { read open execute getattr };
-allow pricamera_app gpu_device:chr_file { read write open ioctl };
-
-# Procfs Hardware Information Access
-allow pricamera_app proc_meminfo:file { read open };
-
-# Allow PriCamera (priv_app) access to dmabuf filesystem
-allow priv_app unlabeled:filesystem getattr;
-
-# Allow PriCamera to grant URI permission to other apps
-allow priv_app mediastore_audio_artist_album_art_file:file { read write create unlink };
-allow priv_app media_rw_data_file:dir { write add_name remove_name };
-allow priv_app media_rw_data_file:file { write create unlink getattr setattr };
-
-# Allow access to content provider for photo review
-allow priv_app content_provider:file { read getattr };
-allow priv_app mediaprovider:binder { call transfer };
-allow priv_app mediaprovider_app:binder { call transfer };
+# PriCamera SEPolicy (priv_app domain)
 
 # dmabuf filesystem access
 allow priv_app unlabeled:filesystem getattr;
 allow priv_app dmabuf_system_heap_device:chr_file { read write open ioctl };
 
+# qemu_hw_prop read (ro.kernel.qemu.*)
+allow priv_app qemu_hw_prop:file { read open getattr };
+
+# BGService dari vendor camera
+allow priv_app default_android_service:service_manager find;
+
 # MTK camera HAL binder
 allow priv_app mtk_hal_camera:binder { call transfer };
+
+# MediaProvider
+allow priv_app mediaprovider:binder { call transfer };
+allow priv_app mediaprovider_app:binder { call transfer };
