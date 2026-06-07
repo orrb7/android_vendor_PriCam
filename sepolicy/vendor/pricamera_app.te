@@ -91,6 +91,7 @@ allow priv_app mediaprovider_app:binder { call transfer };
 
 # dmabuf filesystem access
 allow priv_app unlabeled:filesystem getattr;
+allow priv_app dmabuf_system_heap_device:chr_file { read write open ioctl };
 
 # MTK camera HAL binder
 allow priv_app mtk_hal_camera:binder { call transfer };
