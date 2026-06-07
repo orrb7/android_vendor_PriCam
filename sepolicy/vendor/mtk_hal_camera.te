@@ -1,0 +1,3 @@
+# MTK camera HAL access to default properties
+allow mtk_hal_camera default_prop:file { read open getattr map };
+

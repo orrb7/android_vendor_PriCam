@@ -75,3 +75,22 @@ allow pricamera_app gpu_device:chr_file { read write open ioctl };
 
 # Procfs Hardware Information Access
 allow pricamera_app proc_meminfo:file { read open };
+
+# Allow PriCamera (priv_app) access to dmabuf filesystem
+allow priv_app unlabeled:filesystem getattr;
+
+# Allow PriCamera to grant URI permission to other apps
+allow priv_app mediastore_audio_artist_album_art_file:file { read write create unlink };
+allow priv_app media_rw_data_file:dir { write add_name remove_name };
+allow priv_app media_rw_data_file:file { write create unlink getattr setattr };
+
+# Allow access to content provider for photo review
+allow priv_app content_provider:file { read getattr };
+allow priv_app mediaprovider:binder { call transfer };
+allow priv_app mediaprovider_app:binder { call transfer };
+
+# dmabuf filesystem access
+allow priv_app unlabeled:filesystem getattr;
+
+# MTK camera HAL binder
+allow priv_app mtk_hal_camera:binder { call transfer };
