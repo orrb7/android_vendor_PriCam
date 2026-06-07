@@ -13,16 +13,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     PriCamera \
-    libBSTFaceDetction \
-    libBSTSingleAIDoc \
-    libBstStick2D \
-    libjniBstAiDoc \
-    libjniBstSticker \
-    libjni_bstbeauty \
-    libjni_bstfilter \
-    libjni_bstportrait \
-    libjni_uvpanorama \
-    libopencv_java4 \
     libBSTBeautyAPK \
     libBSTSingleAIBokeh \
     libUvPanorama \
@@ -1585,6 +1575,19 @@ PRODUCT_COPY_FILES += \
     $(PriCamera_PATH)/proprietary/system_ext/media/sticker/frame_15/icon.png:$(TARGET_COPY_OUT_SYSTEM_EXT)/media/sticker/frame_15/icon.png \
     $(PriCamera_PATH)/proprietary/system_ext/media/sticker/frame_15/setting.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/media/sticker/frame_15/setting.txt
 
+PRODUCT_PACKAGES += \
+    libBSTFaceDetction_symlink \
+    libBSTSingleAIDoc_symlink \
+    libBstStick2D_symlink \
+    libc++_shared_symlink \
+    libjniBstAiDoc_symlink \
+    libjniBstSticker_symlink \
+    libjni_bstbeauty_symlink \
+    libjni_bstfilter_symlink \
+    libjni_bstportrait_symlink \
+    libjni_uvpanorama_symlink \
+    libopencv_java4_symlink
+
 # ODM Camera Props
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.odm.camera=1 \
@@ -1654,4 +1657,3 @@ PRODUCT_COPY_FILES += \
     $(PriCamera_PATH)/proprietary/system_ext/etc/permissions/default-permissions-pricamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/default-permissions/pricamera.xml \
     $(PriCamera_PATH)/proprietary/system_ext/etc/permissions/hiddenapi-package-allowlist-PriCamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/hiddenapi-package-allowlist-PriCamera.xml \
     $(PriCamera_PATH)/proprietary/system_ext/etc/sysconfig/sysconfig-pricamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/sysconfig-pricamera.xml
-

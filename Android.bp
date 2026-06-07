@@ -20,7 +20,6 @@ cc_prebuilt_library_shared {
     target: { android_arm64: { srcs: ["proprietary/system_ext/lib64/libBSTBeautyAPK.so"] } },
     shared_libs: ["libc++", "libc", "libdl", "liblog", "libm"],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -33,7 +32,6 @@ cc_prebuilt_library_shared {
     target: { android_arm64: { srcs: ["proprietary/system_ext/lib64/libBSTFaceDetction.so"] } },
     shared_libs: ["libc++", "libc", "libdl", "liblog", "libm"],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -45,8 +43,7 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: { android_arm64: { srcs: ["proprietary/system_ext/lib64/libBSTSingleAIDoc.so"] } },
     shared_libs: ["libc++", "libc", "libdl", "liblog", "libm"],
-    compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
+    compile_multilib: "64",    
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -59,7 +56,6 @@ cc_prebuilt_library_shared {
     target: { android_arm64: { srcs: ["proprietary/system_ext/lib64/libBstStick2D.so"] } },
     shared_libs: ["libc++", "libc", "libdl", "liblog", "libm"],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -79,7 +75,6 @@ cc_prebuilt_library_shared {
         "libtensorflowlite24",
     ],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -99,7 +94,6 @@ cc_prebuilt_library_shared {
         "libm",
     ],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -120,7 +114,6 @@ cc_prebuilt_library_shared {
         "libtensorflowlite24",
     ],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -133,7 +126,6 @@ cc_prebuilt_library_shared {
     target: { android_arm64: { srcs: ["proprietary/system_ext/lib64/libjni_bstfilter.so"] } },
     shared_libs: ["libc++", "libc", "libdl", "libloadfilter", "liblog", "libm"],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -146,7 +138,6 @@ cc_prebuilt_library_shared {
     target: { android_arm64: { srcs: ["proprietary/system_ext/lib64/libjni_bstportrait.so"] } },
     shared_libs: ["libc++", "libc", "libdl", "liblog", "libm"],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -169,7 +160,6 @@ cc_prebuilt_library_shared {
         "libutils",
     ],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -182,7 +172,6 @@ cc_prebuilt_library_shared {
     target: { android_arm64: { srcs: ["proprietary/system_ext/lib64/libjni_uvpanorama.so"] } },
     shared_libs: ["libUvPanorama", "libc++", "libc", "libdl", "liblog", "libm"],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -195,7 +184,6 @@ cc_prebuilt_library_shared {
     target: { android_arm64: { srcs: ["proprietary/system_ext/lib64/libopencv_java4.so"] } },
     shared_libs: ["libc++", "libc", "libdl", "liblog", "libm"],
     compile_multilib: "64",
-    relative_install_path: "PriCamera/lib/arm64",
     system_ext_specific: true,
     check_elf_files: false,
     prefer: true,
@@ -260,3 +248,81 @@ cc_prebuilt_library_shared {
     check_elf_files: false,
     prefer: true,
 }
+
+install_symlink {
+    name: "libBSTFaceDetction_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libBSTFaceDetction.so",
+    symlink_target: "/system_ext/lib64/libBSTFaceDetction.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libBSTSingleAIDoc_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libBSTSingleAIDoc.so",
+    symlink_target: "/system_ext/lib64/libBSTSingleAIDoc.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libBstStick2D_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libBstStick2D.so",
+    symlink_target: "/system_ext/lib64/libBstStick2D.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libc++_shared_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libc++_shared.so",
+    symlink_target: "/system_ext/lib64/libc++_shared.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libjniBstAiDoc_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libjniBstAiDoc.so",
+    symlink_target: "/system_ext/lib64/libjniBstAiDoc.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libjniBstSticker_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libjniBstSticker.so",
+    symlink_target: "/system_ext/lib64/libjniBstSticker.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libjni_bstbeauty_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libjni_bstbeauty.so",
+    symlink_target: "/system_ext/lib64/libjni_bstbeauty.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libjni_bstfilter_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libjni_bstfilter.so",
+    symlink_target: "/system_ext/lib64/libjni_bstfilter.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libjni_bstportrait_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libjni_bstportrait.so",
+    symlink_target: "/system_ext/lib64/libjni_bstportrait.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libjni_uvpanorama_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libjni_uvpanorama.so",
+    symlink_target: "/system_ext/lib64/libjni_uvpanorama.so",
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "libopencv_java4_symlink",
+    installed_location: "priv-app/PriCamera/lib/arm64/libopencv_java4.so",
+    symlink_target: "/system_ext/lib64/libopencv_java4.so",
+    system_ext_specific: true,
+}
+
