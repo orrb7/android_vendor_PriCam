@@ -6,3 +6,7 @@ allow mtk_hal_camera vendor_default_prop:file { read open getattr map };
 
 # Allow set vendor debug camera properties
 set_prop(mtk_hal_camera, vendor_debug_camera_prop)
+
+# cameraserver dan mediaserver read vendor_default_prop
+allow cameraserver vendor_default_prop:file { read open getattr map };
+allow mediaserver vendor_default_prop:file { read open getattr map };
