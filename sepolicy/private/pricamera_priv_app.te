@@ -4,7 +4,7 @@ allow priv_app dmabuf_system_heap_device:chr_file { read write open ioctl };
 # qemu_hw_prop read (ro.kernel.qemu.*)
 allow priv_app qemu_hw_prop:file { read open getattr };
 
-# BGService dari vendor camera
+# BGService
 allow priv_app default_android_service:service_manager find;
 
 # MTK camera HAL binder
