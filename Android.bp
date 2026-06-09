@@ -279,7 +279,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libtensorflowlite",
+    name: "libtensorflowlite_prize",
     owner: "advan",
     strip: { none: true },
     target: { android_arm64: { srcs: ["proprietary/system_ext/lib64/libtensorflowlite.so"] } },

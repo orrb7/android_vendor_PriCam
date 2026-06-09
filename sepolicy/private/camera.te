@@ -1,0 +1,13 @@
+get_prop(priv_app, system_odm_camera_prop)
+allow priv_app system_lib_file:file { execute read open getattr map };
+allow priv_app system_sticker_file:dir { search read open getattr };
+allow priv_app system_sticker_file:file { read open getattr };
+
+allow priv_app pri_water:dir { search read open };
+allow priv_app pri_water:file { read open getattr };
+
+allow priv_app system_file:dir { search read open getattr };
+allow priv_app system_file:file { read open getattr };
+
+allow priv_app camera_config_file:dir { search read open getattr };
+allow priv_app camera_config_file:file { read open getattr };

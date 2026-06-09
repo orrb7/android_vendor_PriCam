@@ -35,7 +35,7 @@ PRODUCT_PACKAGES += \
     libjpeg-alpha-oal \
     libloadfilter \
     libopencv_java4 \
-    libtensorflowlite \
+    libtensorflowlite_prize \
     libtensorflowlite24 \
     libtflite_mtk \
     libcomutils \
