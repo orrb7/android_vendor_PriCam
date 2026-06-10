@@ -1,2 +1,2 @@
 /data/vendor/camera/watermark(/.*)?    u:object_r:pri_water:s0
-/system/data/sticker(/.*)              u:object_r:pri_sticker:s0
+/system/data/sticker(/.*)? u:object_r:system_sticker_file:s0

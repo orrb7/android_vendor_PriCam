@@ -11,6 +11,11 @@ android_app_import {
     dex_preopt: {
         enabled: false,
     },
+    overrides: [
+        "Aperture",
+        "Camera2",
+        "GoogleCamera",
+    ],
     system_ext_specific: true,
 }
 
