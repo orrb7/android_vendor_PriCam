@@ -1681,7 +1681,5 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 # Permissions & Sysconfig
 PRODUCT_COPY_FILES += \
-    $(PriCamera_PATH)/proprietary/system_ext/etc/permissions/privapp-permissions-PriCamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-PriCamera.xml \
-    $(PriCamera_PATH)/proprietary/system_ext/etc/permissions/default-permissions-pricamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/default-permissions/pricamera.xml \
-    $(PriCamera_PATH)/proprietary/system_ext/etc/permissions/hiddenapi-package-allowlist-PriCamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/hiddenapi-package-allowlist-PriCamera.xml \
-    $(PriCamera_PATH)/proprietary/system_ext/etc/sysconfig/sysconfig-pricamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/sysconfig-pricamera.xml
+    $(PriCamera_PATH)/proprietary/system_ext/etc/permissions/privapp-permissions-pricamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-pricamera.xml \
+    $(PriCamera_PATH)/proprietary/system_ext/etc/permissions/hiddenapi-package-allowlist-pricamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/hiddenapi-package-allowlist-pricamera.xml \

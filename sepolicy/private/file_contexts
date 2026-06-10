@@ -1,7 +1,7 @@
 # PriCamera file contexts
 
 # APK
-/system_ext/priv-app/PriCamera(/.*)?    u:object_r:priv_app_exec:s0
+/system_ext/priv-app/PriCamera(/.*)?              u:object_r:system_ext_file:s0
 
 # Libs system_ext/lib64/
 /system_ext/lib64/libBST.*\.so                    u:object_r:system_ext_file:s0
@@ -21,11 +21,9 @@
 /system_ext/lib64/libPQDCjni\.so                  u:object_r:system_ext_file:s0
 /system_ext/lib64/libPQjni\.so                    u:object_r:system_ext_file:s0
 
-/system_ext/lib64(/.*)?    u:object_r:system_lib_file:s0
+/system_ext/etc/camera/sticker(/.*)?              u:object_r:system_sticker_file:s0
 
-/system_ext/etc/camera/sticker(/.*)?    u:object_r:system_sticker_file:s0
-
-/system_ext/etc/bst_stick\.cfg        u:object_r:camera_config_file:s0
-/system_ext/etc/bstai_aidoc            u:object_r:camera_config_file:s0
-/system_ext/etc/bstaicorner_aidoc      u:object_r:camera_config_file:s0
-/system_ext/etc/singleaidoc\.cfg       u:object_r:camera_config_file:s0
+/system_ext/etc/bst_stick\.cfg                    u:object_r:camera_config_file:s0
+/system_ext/etc/bstai_aidoc                       u:object_r:camera_config_file:s0
+/system_ext/etc/bstaicorner_aidoc                 u:object_r:camera_config_file:s0
+/system_ext/etc/singleaidoc\.cfg                  u:object_r:camera_config_file:s0
