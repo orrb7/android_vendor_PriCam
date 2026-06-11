@@ -1,1 +1,7 @@
 binder_call(priv_app, mtk_hal_camera)
+
+# Allow BGS
+allow priv_app mtk_hal_bgs_hwservice:hwservice_manager find;
+
+# Allow acces qemu
+get_prop(priv_app, qemu_hw_prop)

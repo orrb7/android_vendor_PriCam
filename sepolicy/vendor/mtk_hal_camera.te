@@ -10,3 +10,9 @@ set_prop(mtk_hal_camera, vendor_debug_camera_prop)
 # cameraserver dan mediaserver read vendor_default_prop
 allow cameraserver vendor_default_prop:file { read open getattr map };
 allow mediaserver vendor_default_prop:file { read open getattr map };
+
+# Allow ODM camera
+get_prop(mtk_hal_camera, system_odm_camera_prop)
+
+# Allow Flashlight
+set_prop(mtk_hal_camera, system_odm_camera_prop)
