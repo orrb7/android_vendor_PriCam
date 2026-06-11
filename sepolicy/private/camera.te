@@ -9,5 +9,3 @@ allow priv_app pri_water:file { read open getattr };
 allow priv_app system_file:dir { search read open getattr };
 allow priv_app system_file:file { read open getattr };
 
-allow priv_app camera_config_file:dir { search read open getattr };
-allow priv_app camera_config_file:file { read open getattr };

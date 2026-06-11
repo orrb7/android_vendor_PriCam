@@ -1,4 +1,4 @@
-PriCamera_PATH := vendor/PriCamera
+PriCamera_PATH := vendor/prize/camera
 
 # Soong Namespace
 PRODUCT_SOONG_NAMESPACES += \

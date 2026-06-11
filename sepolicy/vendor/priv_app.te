@@ -1,0 +1,1 @@
+binder_call(priv_app, mtk_hal_camera)

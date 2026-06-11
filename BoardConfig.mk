@@ -1,2 +1,2 @@
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += vendor/PriCamera/sepolicy/private
-VENDOR_SEPOLICY_DIRS  += vendor/PriCamera/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += vendor/prize/camera/sepolicy/private
+VENDOR_SEPOLICY_DIRS  += vendor/prize/camera/sepolicy/vendor
