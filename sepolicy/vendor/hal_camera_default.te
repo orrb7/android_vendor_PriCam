@@ -1,1 +1,7 @@
 get_prop(hal_camera_default, system_odm_camera_prop)
+
+# Allow HAL properti AI Camera
+allow mtk_hal_camera vendor_mtk_emcamera_prop:property_service set;
+allow mtk_hal_camera vendor_mtk_emcamera_prop:file { read open getattr map };
+
+allow priv_app unlabeled:filesystem getattr;

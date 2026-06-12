@@ -1,2 +1,4 @@
 vendor.debug.screenflash.        u:object_r:vendor_debug_camera_prop:s0
 vendor.debug.aicamera.           u:object_r:vendor_debug_camera_prop:s0
+
+vendor.debug.aicamera.mode u:object_r:vendor_mtk_emcamera_prop:s0
