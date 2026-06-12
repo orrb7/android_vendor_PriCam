@@ -1,5 +1,0 @@
-type system_sticker_file, system_file_type, file_type;
-type pri_water, system_file_type, file_type;
-type camera_config_file, system_file_type, file_type;
-type pri_camera_lib_file, system_file_type, file_type;
-type system_ext_priv_app_file, system_file_type, file_type;
