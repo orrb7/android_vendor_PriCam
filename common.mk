@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     libjni_bstportrait \
     libjni_pq \
     libjni_uvpanorama \
+    libc++_shared \
     libjpeg-alpha \
     libjpeg-alpha-oal \
     libloadfilter \
