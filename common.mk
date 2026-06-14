@@ -47,10 +47,16 @@ PRODUCT_PACKAGES += \
     libmtk_vt_service \
     libmtk_vt_wrapper \
     libsignal \
+    libsink \
     libsource \
     libvcodec_cap \
     libvcodec_capenc \
     libvt_avsync \
+    vendor.mediatek.hardware.pq@2.0_prize \
+    vendor.mediatek.hardware.pq@2.1_prize \
+    vendor.mediatek.hardware.pq@2.2_prize \
+    vendor.mediatek.hardware.pq@2.3_prize \
+    vendor.mediatek.hardware.pq_aidl-V2-ndk \
     vendor.mediatek.hardware.videotelephony-V1-ndk \
     vendor.mediatek.hardware.videotelephony@1.0_prize
 
