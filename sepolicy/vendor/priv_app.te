@@ -1,1 +1,2 @@
 get_prop(priv_app, vendor_persist_camera_prop)
+allow priv_app mtk_hal_bgs_hwservice:hwservice_manager find;

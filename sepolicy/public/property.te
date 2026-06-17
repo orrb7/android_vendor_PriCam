@@ -1,1 +1,2 @@
 system_public_prop(system_odm_camera_prop)
+get_prop(appdomain, system_odm_camera_prop)
